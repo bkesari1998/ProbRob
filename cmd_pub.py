@@ -8,8 +8,11 @@ def publish_cmd():
     pub = rospy.Publisher('chatter', String, queue_size=10)
     rospy.init_node('cmd_publisher', anonymous=True)
     rate = rospy.Rate(1)
+    cmds = ['c', 'cc', 'f', b']
     while not rospy.is_shutdown():
         cmd = raw_input('Enter command: ')
+        if cmd not in cmds:
+            continue
         pub.publish(cmd)
         rate.sleep()
 
