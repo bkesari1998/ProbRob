@@ -16,3 +16,5 @@ and the clockwise and counter clockwise rotation. The node publishes at a maximu
 ### im_read.py
 This node is used to test the turtlebot's camera. It subscribes to the camera and outputs the header of the image it recieves. This node also operates at a 
 frequency of 1 Hz.
+
+Additionally, the urdf files for the environment are also in the environent.
