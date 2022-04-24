@@ -14,7 +14,7 @@ def image_callback(img_msg):
 
 # Initalize a subscriber to the "/camera/rgb/image_raw" topic with the function "image_callback" as a callback
 def publish_img():
-    rospy.init_node('img_publisher', anonymous=True)
+    rospy.init_node('im_read', anonymous=True)
     sub = rospy.Subscriber('/camera/rgb/image_raw', Image, image_callback)
 
 
