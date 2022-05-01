@@ -1,16 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 from std_msgs.msg import String
 
 def publish_cmd():
-    print('hello')
-    pub = rospy.Publisher('chatter', String, queue_size=10)
+    pub = rospy.Publisher('whatever', String, queue_size=10)
     rospy.init_node('cmd_publisher', anonymous=True)
     rate = rospy.Rate(1)
-    cmds = ['c', 'cc', 'f', b']
+    cmds = ['0', '1', '2', '3']
     while not rospy.is_shutdown():
-        cmd = raw_input('Enter command: ')
+        cmd = input('Enter command: ')
         if cmd not in cmds:
             continue
         pub.publish(cmd)
